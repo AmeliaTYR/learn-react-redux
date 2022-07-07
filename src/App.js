@@ -1,13 +1,15 @@
-import "./styles.css";
-import Homepage from "./pages/Homepage";
 import { BrowserRouter } from "react-router-dom";
-
-export default function App() {
+import RouteSwitch from "./Routes";
+import { Provider } from "react-redux";
+import { store } from "./store";
+function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
-        <Homepage />
-      </div>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <RouteSwitch />
+      </BrowserRouter>
+    </Provider>
   );
 }
+
+export default App;
